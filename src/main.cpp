@@ -2,7 +2,11 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Application");
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+
+    sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Application", sf::Style::Default, settings);
+    
     sf::CircleShape shape;
     shape.setRadius(40.f);
     shape.setPosition(100.f, 100.f);
