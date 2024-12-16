@@ -3,14 +3,18 @@
 int main()
 {
     sf::ContextSettings settings;
-    settings.antialiasingLevel = 8;
+    settings.antialiasingLevel = 16;
 
     sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Application", sf::Style::Default, settings);
-    
+    window.setFramerateLimit(60);
+
     sf::CircleShape shape;
-    shape.setRadius(40.f);
-    shape.setPosition(100.f, 100.f);
+    shape.setRadius(100.f);
+    shape.setPosition(150.f, 150.f);
     shape.setFillColor(sf::Color::Cyan);
+    shape.setPointCount(1000);
+    shape.setOutlineColor(sf::Color::White);
+    shape.setOutlineThickness(2.f);
 
     while (window.isOpen())
     {
